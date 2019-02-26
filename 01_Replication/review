@@ -1,0 +1,11 @@
+
+On February 25 2019, I have finished the first course in the BioInformatics Specialisation offered by UC San Diego and I obtained a certificate (https://www.coursera.org/account/accomplishments/certificate/U5PX7ZUVB6DP).
+
+This course covers algorithms for solving various biological problems along with a handful of programming challenges to implement these algorithms in Python.
+
+I learned in this course how to find hidden messages in replication origins. I implemented basic functions to count patterns in DNA strings and created k-mer frequency maps to establish for finding most frequent k-mers. In addition, I implemented functions to find the reverse, complement and reverse-complement of Dna patterns. Moreover, I implemented a skew-array to keep track of the number of occurrences of G and C nucleotides encountered within a Genome. Consequently I implemented a function to find the minimum-skew. As an example, I implemented these functions to find the replication origin in a bacterial circular dna. Next, I implemented the Hamming-distance that accounts for mismatch between the pattern to be searched and the actual sequence within the Genome.
+
+The following part in this course was to find transcription factors binding sites (regulatory motifs). I implemented functions to compute scores for a given array of motifs and generate profile matrix that corresponds to the number of nucleotides at a certain column in the motifs array. In addition, I implemented a function to find the most popular nucleotides in the motif matrix (i.e. consensus string). Next, I implemented heuristic algorithms to find motifs, including Greedy motif search and randomised algorithms where Laplace’s rule of succession is applied. A more cautious motif searching algorithm is also implemented (Gibbs Sampler).
+
+The next step is to continue with the specialisation and take the next course ‘Finding Hidden Messages’.
+

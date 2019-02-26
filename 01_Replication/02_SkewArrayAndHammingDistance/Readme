@@ -1,0 +1,20 @@
+01_SkewArray.py
+ - skew array of a genome that accounts for the number of C related to number of G nucleotides
+
+02_SkewArrayOfEcoli.py
+ - plot a chart showing skew throughout the Genome
+
+03_MinimumSkew.py
+ - print out the minimum skew for a given sequence
+
+04_HammingDistance.py
+ - compute Hamming distance accouting for mis-match between pattern and genome
+
+05_ApproximatePatternMatching.py
+ - similar to PatternMatching, except that this one considers mis-matches (using hamming distance)
+
+06_ApproximatePatternCount.py
+ - Similar to Pattern count , except that it considers mis-matches (using Hamming distance)
+
+E-coli.txt
+ - dna sequence of e-coli bactirium

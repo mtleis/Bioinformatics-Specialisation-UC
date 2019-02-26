@@ -1,0 +1,26 @@
+01_PatternMatching.py
+ - Find the positions of a certain Pattern within a genome sequence.
+
+Complement.py
+ - return the complement of a given pattern.
+
+FrequencyMap.py
+ - create a frequency matrix for k-mers in a given sequence and integer k (length of kmer).
+
+FrequencyWords.py
+ - implements the frequency map function to find all most probable k-mers.
+
+PatternCount.py
+ - Count the occurrence of a certain pattern within a sequence.
+
+Replication.py
+ - Testing of FrequencyMap and PatternCount
+
+reverse.py
+ - reverse and complement of given patterns.
+
+ReverseComplment.py
+ - return the reverse complement of a given pattern
+
+SymbolArray.py
+ - create a symbol array within a given sequence
