@@ -1,0 +1,26 @@
+We learned about the circadian clock and the delayed-sleep phase syndrome (DSPS) that a malfuncation circadian clock can cause.
+
+The circadian clock activities in plants is coordinated by regulatory proteins. The regulatory genes i.e. the clock's master time keepers, encodes regulatory proteins that are transcription factors. Those transcription factors bind to 'regulatory motifs'. These motifs exist within a window of 600-1000 nucleotide-long in the gene's upstream region.
+
+Although some of the regulatory motifs, for example the evening element, is highly conserved in plants (at least according to Kay's experiment). Such motifs can be slightly different than each other. For example, the NF-kB transcription factor in flies is no-where close to conservative as the evening element. NF-kB in flies activates various immunity genes.
+
+In order to mimic an unknown transcription factor binding site, we implant k-mers at random selected positions within a list of DNA strings. Now we use computational methods to find such a hidden message. Invoking FrequentWord algorithm implemented earlier would solve the problem. However, for mutated versions the FrequentWordWithMismatches algorithm is not efficient for large k-mers. Hence a new algorithm for motif finding is suggested.
+
+First we implement a brute-force algorithm to find all (k,d)-motifs in a list of Dna strings. Another approach is to select a k-mer for each string in the list and compare the resulting k-mer with the other k-mers in the other strings. We score the matrix by computing the sum of nucleotides that differ from the consensus nucleotide per each column.We can form a consensus string from the most popular letters of each column. If the original motifs list is selected correctly from the upstream regions, then the consensus string provides an ideal candidate regulatory motif for these regions. For columns that have the same probability for the most frequent letter, we can compute the entropy. More conserved columns have lower entropy. The sum of all column entropies is the entropy of the whole motif matrix.
+
+---
+Scoring a matrix of k-mers helps to find regulatory motifs. A regulatory motif is often the one with the minimum score. Using a brute-force approach that considers every k-mer is computationally expensive. In a list of Dna strings of size 't', each string has n-k+1 k-mers. That yields (n-k+1)^t different ways to form a list of Motifs. To compute the score of each list, that will take k.t steps. The result is a running time of O(n^t . k . t) where n >> k!
+The score of a matrix is also equal to the hamming distance between the consensus string and the list of motifs. Hence, the motif finding problem can be changed into finding a pattern that minimizes the hamming distance with the list of motifs.
+In fact we do not need to consider all possible collections of Motifs in a list of Dna strings. Because it suffices to find the Pattern (k-mer) with the minimum Hamming Distance between itself and the whole string in Dna.
+The minimum Hamming Distance of each string with a certain Pattern is added for all strings in the Dna list. Now the Pattern that obtains the overall minimum distance would be our regulatory motif, and it is referred to as the 'Median String'.
+The Median String approach is favorable over the brute-force approach. Median String computes the Hamming distance once for each of the 4^k patterns. Each computation of Hamming distance requires k.n.t operations, where t is the size of the DNA list and n is the length of each string in the list. The overall computation time of Median string would be O(4^k . n.k.t). This is favorable over the O(n^t.k.t) brute-force because in practice k is around 20 nucleotides while t can be in term of thousands. Nevertheless, Median String is still inefficient when searching for patterns having more than 15 nucleotides.
+---
+Greedy Motif Search:
+Greedy algorithms select the most 'attractive' alternative at each iteration. The idea is to look at the most probable nucleotide at each column and mark that nucleotide as part of the candidate pattern.
+We implemented a profile matrix where the elements of this matrix are the probabilities of a certain nucleotide to be found at a specific location in the pattern.
+The proposed GreedyMotifSearch starts from an arbitrarily selected k-mers in each string, and build the Profile matrix.
+
+The first implemantation of the GreedyMotifSearch trades speed for accuracy. In addition it has a potential problem since many zeros are in the profile matrix making it impossible to find some motifs. Such problem needs to be addressed ...
+
+---
+The GreedyMotifSearch algorithm has a potential problem since many zeros are in the profile matrix. That makes it impossible to find find motifs. To address the zero probability issue, we refer to the concept that rare events do have a small probability to occur, although such events never happened before. We adjust the zero-observed probabilities in the profile matrix with small numbers (pseudocounts). In specific, we use Laplace's rule of succession and add the number 1 to the count matrix, which is used to generate the profile matrix.

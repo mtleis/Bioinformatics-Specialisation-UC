@@ -1,0 +1,19 @@
+In week two we learned the following:
+
+We learned that Polymerases are unidirectional proteins that copies DNA in 5’ to 3’ direction. They can only move on the reverse direction of the original strand. Hence they can copy nucleotides non-stop on the reverse half-strands.
+The DNA has 4 different half strands; two half-strands are traversed from the 5’ to 3’ directions and are called forward half-strands. The other two half-strands are traversed from the 3’ to 5’ direction and are called reverse half stands. The replication process is asymmetric.
+
+The reverse half-strand is called a leading strand , since the polymerase traverse it non-stop. On the other hand, the forward half-strand is called a lagging strand.
+
+On the forward half-strand, the polymerase waits until the stands open about 2000 nucleotides forming a replication fork, and a primer is formed at the end of the replication fork. Then Polymerase starts replicating in the direction of the ori’ forming small chunks, called Okazai fragments. At the end of the replication process , we are left with gaps between the okazaki fragments. These are sewn together by DNA ligase enzyme.
+
+The reverse half-strand lives most of its life double-stranded while the forward half-strand lives most of its life single-stranded waiting to be used as a template for replication. This information is important because a single strand is known to have more mutations than a double strand.
+
+The frequency of Cytosine [C] is larger on the reverse half strand, while the frequency of G is lower. This is probably due to deamination of C into T. Deamination rates increases by 100 folds in single strands. Keeping track of the difference between number of G and number of C can be an indication of the location of the ori’ the origin of replication. This is because G-C would start increasing in the forward half-strand and decreases in the reverse half-strange.
+
+—-
+
+Finding the minimum skew in E-coli, and searching for frequent 9-mer’s starting from that location within a window of 500 nucleotides, didn’t reveal any frequent 9-mer’s. However, approximate 9-mer’s could be found. In Vibrio Cholera 8 approximate 9-mer’s exist in the origin of replication in addition to the 6 exact 9-mer’s.
+The number of mismatches between 2 strings is called the Hamming Distance.
+—
+

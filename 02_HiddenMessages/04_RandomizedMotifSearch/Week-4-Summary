@@ -1,0 +1,16 @@
+## Randomized Motif Search
+
+Two types of randomized algorithms are Las Vegas and Monte Carlo. Las Vegas are guaranteed to return exact solutions, while Monte Carlo returns approximate solutions. However, Monte Carlo algorithms are fast and can quickly find the approximate solution.
+The Randomized Motif Search algorithm implemented in this section starts by selecting a random set of k-mers from a list of Dna strings. Then the algorithm would construct a profile from that random k-mers set. The profile along with the previous k-mers set are used iteratively to construct a new motif set. The new motif set is constructed in every iteration as long as the score of the newly selected set is better than the previous set.
+
+---
+While RandomizedMotifSearch is a reckless algorithm that discards all kmers with each new iteration, GibbsSampler is a more cautious algorithm that discards only a single k-mer at each iteration.
+ 
+ GibbsSampler randomly selects the k-mer to be replaced at each new iteration.We learned how to implement a weighted random number generator that is based on a set of probabilities. This number generator is used by GibbsSampler to select a Profile-randomly generated k-mer at each iteration.
+  
+  GibbsSampler in fact ignores a randomly selected string in a certain iteration, but it considers it in subsequent iterations. At each iteration a new profile matrix is constructed.GibbsSampler randomly selects a kmer by assuming that it is rolling a (|dna[0]|-|kmer|)-sided die. At a new iteration, it restore the previously ignored string, and the newly random selected kmer (corresponding to the ignored string) is now inserted into the motifs list. 
+  Afterward, it assumes that it rolls a (|dna|)-sided die to select a new string for removal. The new profile will look more biased toward the implanted motif than did the previous profile matrix.
+----------
+
+Dormancy survival regulator is a transcription factor that regulates many genes whose expression dramatically change under hypoxic conditions.
+For a dataset obtained from upstream regions of 10 DosR genes (out of 25 originally identified), we tried to identify the regulatory binding site (regulatory motif). I applied a combination algorithm of Randomized motif search and GibbsSampler. The idea is to find the global optimum using the randomized algorithm and then find the local optimum using the GibbsSampler. 

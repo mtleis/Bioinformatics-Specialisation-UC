@@ -1,0 +1,143 @@
+## I. Consensus:
+http://stormo.wustl.edu/consensus/html/Html/main.html
+
+Input Width: 20, >> Submit >> 19 motifs
+To the left of matrix 1 column, we have starting positions
+XXX/YYY, the YYY is the starting position:
+
+             Rv1733c   1|14  :   1/187   TTCGTGACCGACGTCCCCAG
+             Rv1737c   2|5   :   2/141   TTGGGGACTTCCGGCCCTAA
+              Rv1738   3|1   :   3/117   GCCGGGACTTCAGGCCCTAT
+              Rv0079   4|7   :   4/162   CATGGGACTTTCGGCCCTGT
+              Rv0569   5|10  :   6/156   GAGGGGACTTTTGGCCACCG
+             Rv0571c   6|4   :   8/199   CCAGGGACCTAATTCCATAT
+             Rv0574c   7|9   :  10/139   TTGAGGACCTTCGGCCCCAC
+             Rv1734c   8|19  :  11/202   CTGGGGACCGAAGTCCCCGG
+              Rv1996   9|16  :  14/175   TTAGGGACCATCGCCTCCTG
+              Rv1997  10|6   :  15/161   TGGATGACTTACGGCCCTGA
+             Rv2005c  11|15  :  17/180   TTGGGGACTAAAGCCTCATG
+             Rv2031c  12|2   :  20/169   TCGGGGACTTCTGTCCCTAG
+              Rv2032  13|11  :  21/174   TTGGGGACCATTGACCCTGT
+              Rv2623  14|13  :  22/120   TTGAGGACCTAAGCCCGTTG
+             Rv2626c  15|18  :  24/161   CACGGGTCAAACGACCCTAG
+             Rv2627c  16|3   :  25/198   GGCGGGACGTAAGTCCCTAA
+              Rv2628  17|17  :  26/214   GAAGTGACGAAAGACCCCAG
+             Rv3130c  18|8   :  31/157   CGGAGGACCTTTGGCCCTGC
+             Rv3134c  19|12  :  34/159   GTGGGGACCAACGCCCCTGG
+             
+Starting Positions:
+rv1733c    187
+rv1737c    141
+rv1738    117
+rv0079    162
+rv0569    156
+rv0571c    199
+rv0574c    139
+rv1734c    202
+rv1996    175
+rv1997    161
+rv2005c    180
+rv2031c    169
+rv2032    174
+rv2623    120
+rv2626c    161
+rv2627c    198
+rv2628    214
+rv3130c    157
+rv3134c    159
+
+The Collection Motifs:         
+TTCGTGACCGACGTCCCCAG
+TTGGGGACTTCCGGCCCTAA
+GCCGGGACTTCAGGCCCTAT
+CATGGGACTTTCGGCCCTGT
+GAGGGGACTTTTGGCCACCG
+CCAGGGACCTAATTCCATAT
+TTGAGGACCTTCGGCCCCAC
+CTGGGGACCGAAGTCCCCGG
+TTAGGGACCATCGCCTCCTG
+TGGATGACTTACGGCCCTGA
+TTGGGGACTAAAGCCTCATG
+TCGGGGACTTCTGTCCCTAG
+TTGGGGACCATTGACCCTGT
+TTGAGGACCTAAGCCCGTTG
+CACGGGTCAAACGACCCTAG
+GGCGGGACGTAAGTCCCTAA
+GAAGTGACGAAAGACCCCAG
+CGGAGGACCTTTGGCCCTGC
+GTGGGGACCAACGCCCCTGG
+
+# Visualized in web-logo (saved as logo.png):
+http://weblogo.threeplusone.com
+
+
+## II. Using MEME:
+http://meme-suite.org/tools/meme
+http://alternate.meme-suite.org # use if the first is taken so long
+
+Set Parameters : Motifs to find 1
+                 Advanced > Min & Max length : 20
+Starting Positions:
+Rv1738	 	57	
+Rv1737c	 	139	
+Rv1733c	 	107  	
+Rv2032	 	172	
+Rv2031c	 	114	
+Rv3134c	 	136	
+Rv1997	 	159	
+Rv3131	 	143	
+Rv3130c	 	155	
+Rv2006	 	186	
+Rv2005c	 	178	
+Rv2627c	 	200	
+Rv2623	 	118	
+Rv0574c	 	137	
+Rv1996	 	173	
+Rv0571c	 	201	
+Rv0079	 	160 	
+Rv2626c	 	62	
+Rv2628	 	216	
+Rv2007c	 	165	
+Rv2631	 	45	
+Rv1734c	 	204
+
+## Meme Vs. Consensus Results:
+Rv1738	 	57  117	
+Rv1737c	 	139	141
+Rv1733c	 	107 187  	
+Rv2032	 	172 174	
+Rv2031c	 	114	169
+Rv3134c	 	136 159	
+Rv1997	 	159 161	
+Rv3131	 	143	
+Rv3130c	 	155 157	
+Rv2006	 	186	
+Rv2005c	 	178 180	
+Rv2627c	 	200 198	
+Rv2623	 	118 120	
+Rv0574c	 	137 139	
+Rv1996	 	173 175	
+Rv0571c	 	201 199	
+Rv0079	 	160 162	
+Rv2626c	 	62  161	
+Rv2628	 	216 214	
+Rv2007c	 	165	
+Rv2631	 	45	
+Rv1734c	 	204 202
+
+Only in Consensus:
+rv0569    156
+
+## My RandomizedGibbs Vs MEME Vs Consensus
+Rv1733c 188	139 141 
+Rv1737c 208 107 187	
+Rv1738 	140  57 117	 
+Rv0079 	136 160 162	 
+Rv0081 	 83 	 
+Rv0569 	 30 	156 
+Rv0570 	119 	 
+Rv0571c  34 201 199 	 
+
+
+## Different results
+The 3 programs generated totally different motifs. Although Consensus and MEME have many motifs overlapping and shifted with exaclty two nucleotides. In specific, the starting positions of 13 motifs resulted from the two programs differs by 2. 
