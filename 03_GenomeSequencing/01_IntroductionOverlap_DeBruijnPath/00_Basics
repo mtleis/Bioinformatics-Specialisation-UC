@@ -1,0 +1,27 @@
+## Redirection of STDIN
+
+import sys # you must import 'sys' to read from STDIN
+lines = sys.stdin.read().splitlines() # read the input from STDIN
+for i in xrange(len(lines)):
+    print('Line ' + str(i+1) + ' is ' + str(len(lines[i])) + ' characters long.')
+
+# example
+import sys
+k = int(sys.stdin.readline())
+text = sys.stdin.readline()
+
+# full example:
+k = int(input())
+text = input()
+No=Composition(text,k)
+for i in No:
+    print(i)
+
+# another ex.
+import sys # needed for sys.stdin
+lines = sys.stdin.read().splitlines() # read all text from standard input as a single string, and split it on '\n'
+text = function(lines)
+print(text)
+
+To run the script run:
+> example_read_stdin.py < example_input.txt

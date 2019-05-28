@@ -1,0 +1,29 @@
+## Genome Assembly with Euler
+
+Input edges are equal to output edges in Eurlerian graphs. i.e. the indegrees of each node v 'in(v)' is equal to the outdegrees of that node 'out(v)'. The node is then called 'balanced'. Consequently, an Eulerian graph is said to be a 'balanced graph'.
+
+For a balanced directed graph to be Eulerian, it must be also strongly connected, i.e. it is possible to reach any node from every other node.
+
+We implemented a function to find such an Eulerian cycle. First we form a cycle by randomly walking through the graph. Then we select an unexplored edge in the graph (as long as there is one) to start a new cycle. The new cycle is then embedded into the main cycle.
+
+An Eulerian path can has unbalanced start and end nodes. Such graph is called a 'nearly balanced' graph. Adding an extra edge from the end node to the start node in such a 'nearly balanced' graph transfoms such as Eulerian path into an Eulerian cycle resulting in a 'balanced and strongly connected' graph. 
+
+This allows us to Reconstruct a string (genome) from a set of disconnected reads. Consequently we can generate a k-universal strings of 0s and 1s using the StringReconstruction algorithm.
+String Reconstuction is simply calling three previously developed methods. i.e. constructing DeBruijn from a set of Kmers. Then call the Eulerian Path method. Then construct the genome string given the eluerian path.  
+
+## Pair-Reads
+Sequencing technologies generate reads about 300 nucleotides long, which is too short for most repeats. As soon as read length exceeds the length of all repeats in a genome, the de-Bruijn graph turns into a path.
+
+To increase the read length, read-pairs are generated. Pairs of reads separated by a distance 'd' (k,d)-mers.
+The suffix of the first (k,d)-mer in a string of text is equal to the prefix of the next (k,d)-mer.
+A PathGraph can then be constructed from (k,d)-mers.
+Gluing identically labeled in the path-graph yields the De-bruijn graph of pair-reads.
+The De-Bruijn graph should be be holding the unique Eulerian Path.
+
+From a string of text. We isolate a number of {|Text| - (k+d+k) + 1} edges. Such edges are used to construct a graph where the nodes are the prefixes and suffixes of such edges. Such constructed graph is called the PairedCompositionGraph.
+
+Now we need to reconstruct a string from its paired-reads (k,d)-mers. First, we obtain the initial k-mers (FirstPatterns) and the terminal k-mers (SecondPatterns). Then, we construct (spell) two strings from those patterns (by calling StringSpelledByPatterns). Now we have PrefixString and SuffixString.  
+    
+
+ 
+

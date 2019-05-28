@@ -1,0 +1,3 @@
+TT->TT,TC,TG
+CT->TT,TC,TG
+TC->CT

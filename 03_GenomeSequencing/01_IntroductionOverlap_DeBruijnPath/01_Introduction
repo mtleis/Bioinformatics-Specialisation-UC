@@ -1,0 +1,22 @@
+## Be careful , if code didn't work, it is because the files were moved into a 'directory' 01_IntroductionOverlap_DeBruijnPath
+
+## Exploding Newspapers
+
+By short reads (like exploding newspaper articles) : Sequence Assembling.
+Related to Cunn... bridges problem (each bridge 'short read' must be visited 'read' only once)
+
+## The String reconstruction
+Reads are not known to what strand they belong to. In addition, there is sequencing errors in the reads. Moreover, some regions of the genome may not be read.
+all reads are of the same length, hence they are k-mers of a certain k length. Hence the first concept to understand is the composition of such k-mers into a string. 
+
+Consecutive k-mers are linked together to form a genome path. One new symbol is added to the genome at each new k-mer.
+A string's genome path is possible to be constructed from its k-mer composition. The suffix of a pattern in the genome path should equal the prefix of the next pattern in the genome path. The suffix is the last k-1 nucleotides of the k-mer, while the prefix is the first k-1 nucleotides of the k-mer. 
+A k-mer can be considered as a node in a directed graph, where the edges of such graph are between nodes where the suffix of the first is equal to prefix of the second node. Such graph on these k-mers is called the overlap graph.    
+
+A Hamiltonipath is a path in the overlap graph where every node is visited once.
+
+Instead of having the k-mers as node in the overlap graph. We can represent them as edges and the nodes will be the common k-1 nucleotides between two edges. The resulting graph is called De Bruijn.
+
+Eulerian path is a path in De Bruijn graph where every edge is visited exactly once.
+
+A composition Graph represents a composition of a sequence string using an isolated directed edge.
